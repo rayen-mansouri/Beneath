@@ -102,6 +102,56 @@ $ beneath --compare ls ps
 └─────────────────┴────────────────────┴────────────────────────┘
 ```
 
+## TUI Preview
+
+Example of the interactive terminal UI:
+
+```text
+╭───────────── Summary ──────────────╮╭──────── Human Explanation ─────────╮
+│ Total syscalls 161                 ││ 1. Program started via execve.     │
+│ Most frequent  openat              ││ 2. Loaded shared libraries and     │
+│ Slowest        execve (0.005567s)  ││ required files.                    │
+│ Failures       22                  ││ 3. Read current directory entries. │
+│                                    ││ 4. Wrote output to stdout.         │
+│                                    ││                                    │
+╰────────────────────────────────────╯╰────────────────────────────────────╯
+╭────────────── Graphs ──────────────╮╭───────── Security Alerts ──────────╮
+│ Syscall Frequency                  ││ No suspicious behavior detected.   │
+│ openat                             ││                                    │
+│ ████████████████████████ 36        ││                                    │
+│ mmap                               ││                                    │
+│ ██████████████████████░░ 34        ││                                    │
+│ close                              ││                                    │
+│ ████████████████░░░░░░░░ 24        ││                                    │
+│ fstat                              ││                                    │
+│ ███████████████░░░░░░░░░ 23        ││                                    │
+│ read                               ││                                    │
+│ ██████░░░░░░░░░░░░░░░░░░ 10        ││                                    │
+│ mprotect                           ││                                    │
+│ ████░░░░░░░░░░░░░░░░░░░░ 6         ││                                    │
+│ prctl                              ││                                    │
+│ ████░░░░░░░░░░░░░░░░░░░░ 6         ││                                    │
+╰────────────────────────────────────╯╰────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────╮
+│ Keys: [g] graphs  [e] expand explanation  [s] suspicious only  [q] quit │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+│                                                                          │
+╰──────────────────────────────────────────────────────────────────────────╯
+```
+
 ## Notes
 
 - Linux only (`strace` required).
